@@ -1,0 +1,35 @@
+<!-- <p>contact-home works!</p> -->
+<table mat-table [dataSource]="products" class="mat-elevation-z8 card">
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Id. </th>
+        <th mat-cell *matCellDef="let contact">{{ contact.id }}</th>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name </th>
+        <th mat-cell *matCellDef="let contact">{{ contact.name }}</th>
+    </ng-container>
+
+    <ng-container matColumnDef="stock">
+        <th mat-header-cell *matHeaderCellDef>Stock </th>
+        <th mat-cell *matCellDef="let contact">{{ contact.stock }}</th>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>Price </th>
+        <th mat-cell *matCellDef="let contact">{{ contact.price }}</th>
+    </ng-container>
+    
+    <ng-container matColumnDef="active">
+        <th mat-header-cell *matHeaderCellDef>Active </th>
+        <th mat-cell *matCellDef="let contact">{{ contact.active }}</th>
+    </ng-container>
+
+    <ng-container matColumnDef="dateAdded">
+        <th mat-header-cell *matHeaderCellDef>Date Added </th>
+        <th mat-cell *matCellDef="let contact">{{ contact.dateAdded}}</th>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['name', 'price', 'stock', 'active', 'dateAdded']"></tr>
+    <tr mat-row *matRowDef="let row; columns['name', 'price', 'stock', 'active', 'dateAdded']"></tr>
+</table>

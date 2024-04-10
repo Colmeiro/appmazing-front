@@ -1,0 +1,35 @@
+<!-- <p>contact-home works!</p> -->
+<table mat-table [dataSource]="contacts" class="mat-elevation-z8 card">
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Id. </th>
+        <th mat-cell *matCellDef="let contact">{{ contact.id }}</th>
+    </ng-container>
+
+    <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef>Name </th>
+        <th mat-cell *matCellDef="let contact">{{ contact.nombre }}</th>
+    </ng-container>
+
+    <ng-container matColumnDef="apellido1">
+        <th mat-header-cell *matHeaderCellDef>First surname </th>
+        <th mat-cell *matCellDef="let contact">{{ contact.apellido1 }}</th>
+    </ng-container>
+
+    <ng-container matColumnDef="apellido2">
+        <th mat-header-cell *matHeaderCellDef>Second surname </th>
+        <th mat-cell *matCellDef="let contact">{{ contact.apellido2 }}</th>
+    </ng-container>
+    
+    <ng-container matColumnDef="telefono">
+        <th mat-header-cell *matHeaderCellDef>Phone </th>
+        <th mat-cell *matCellDef="let contact">{{ contact.telefono }}</th>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Email </th>
+        <th mat-cell *matCellDef="let contact">{{ contact.email}}</th>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['nombre', 'apellido1', 'apellido2', 'telefono', 'email']"></tr>
+    <tr mat-row *matRowDef="let row; columns['nombre', 'apellido1', 'apellido2', 'telefono', 'email']"></tr>
+</table>
