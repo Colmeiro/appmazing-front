@@ -9,13 +9,17 @@ import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from  '@angular/material/toolbar';
 import { MatButtonModule } from  '@angular/material/button';
+import { MatCardModule } from  '@angular/material/card';
+import { MatIconModule } from  '@angular/material/icon';
 import { ProductHomeComponent } from './product-home/product-home.component';
+import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactHomeComponent,
-    ProductHomeComponent
+    ProductHomeComponent,
+    ContactDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,9 @@ import { ProductHomeComponent } from './product-home/product-home.component';
     MatTableModule,
     HttpClientModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
