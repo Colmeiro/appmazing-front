@@ -13,13 +13,15 @@ import { MatCardModule } from  '@angular/material/card';
 import { MatIconModule } from  '@angular/material/icon';
 import { ProductHomeComponent } from './product-home/product-home.component';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactHomeComponent,
     ProductHomeComponent,
-    ContactDetailComponent
+    ContactDetailComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,24 @@
+<mat-card class="card">
+    <mat-card-title>Product detail</mat-card-title>
+    <mat-card-content class="card-content">
+        <p>
+            <mat-icon>brunch_dining</mat-icon> <strong>Name:</strong> {{product.name}}
+        </p>
+        <p>
+            <mat-icon>warehouse</mat-icon> <strong>Stock :</strong> {{product.stock}}
+        </p>
+        <p>
+            <mat-icon>payments</mat-icon> <strong>Precio:</strong> {{product.price}}
+        </p>
+        <p>
+            <mat-icon>question_mark</mat-icon> <strong>Estado del producto:</strong> {{product.active ? "Activo" : "Inactivo"}}
+        </p>
+        <p>
+            <mat-icon>calendar_month</mat-icon> <strong>Fecha de alta</strong> {{(product.dateAdded.slice(0, -19))}}
+        </p>
+
+    </mat-card-content>
+
+</mat-card>
+
+

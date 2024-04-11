@@ -18,4 +18,14 @@ export class ProductsService {
     // .set('X-Password', 'demo')
     return this.http.get<any>(url, { headers });
   }
+
+  getProduct(c_id: number): Observable<any> {
+    const url = 'http://localhost:30030/products/get';
+    const headers = new HttpHeaders()
+      .set('Content-Type', 'application/json');
+    const body = JSON.stringify({id:c_id})
+    return this.http.post(url, body, { headers });
+  }
+
+
 }
