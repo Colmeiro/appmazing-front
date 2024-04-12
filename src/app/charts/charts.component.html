@@ -1,13 +1,13 @@
 <p>charts works!</p>
 <mat-card class="card">
-    <mat-card-title>Charts contacts</mat-card-title>
+    <mat-card-title>Gráficas de los contactos</mat-card-title>
     <mat-card-content>
         <div class="chart-row">
             <div>
                 <p><strong>Primer Apellido</strong></p>
                 <!-- gráfica de barras verticales -->
                 <ngx-charts-bar-vertical [view]="[400,300]" [results]="initialLetter" [xAxis]="true" [yAxis]="true"
-                    [legend]="false" [showXAxisLabel]="true" xAxisLabel="Inicial del apellido" yAxisLabel="Número de contactos"
+                    [legend]="false" [showXAxisLabel]="true" [showYAxisLabel]="true" xAxisLabel="Inicial del apellido" yAxisLabel="Número de contactos"
                     [yAxisTickFormatting]="formatAxisTick">
 
                 </ngx-charts-bar-vertical>
