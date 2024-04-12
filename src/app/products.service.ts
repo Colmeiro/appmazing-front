@@ -27,5 +27,19 @@ export class ProductsService {
     return this.http.post(url, body, { headers });
   }
 
+  updateProduct(product: any):void {
+    const url = 'http://localhost:30030/products/update';
+    const body = product;
+    const headers = new HttpHeaders()
+    this.http.put(url, body, {headers}).subscribe();
+  }
+
+  newProduct(product: any): void {
+    const url = "http://localhost:30030/products/add"
+    const body = product;
+    const headers = new HttpHeaders();
+    this.http.post(url, body, {headers}).subscribe();
+  }
+
 
 }

@@ -1,4 +1,4 @@
-<!-- <p>contact-home works!</p> -->
+<a mat-stroked-button routerLink="/contact/new" id="new-contact">Nuevo contacto</a>
 <table mat-table [dataSource]="contacts" class="mat-elevation-z8 card">
     <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>Id. </th>
@@ -31,5 +31,6 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="['nombre', 'apellido1', 'apellido2', 'telefono', 'email']"></tr>
-    <tr mat-row *matRowDef="let row; columns['nombre', 'apellido1', 'apellido2', 'telefono', 'email']"></tr>
+    <tr mat-row *matRowDef="let row; columns['nombre', 'apellido1', 'apellido2', 'telefono', 'email']"
+    (click)="openDetailForm(row)"></tr>
 </table>

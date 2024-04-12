@@ -14,10 +14,21 @@
             <mat-icon>question_mark</mat-icon> <strong>Estado del producto:</strong> {{product.active ? "Activo" : "Inactivo"}}
         </p>
         <p>
-            <mat-icon>calendar_month</mat-icon> <strong>Fecha de alta</strong> {{(product.dateAdded.slice(0, -19))}}
+            <mat-icon>calendar_month</mat-icon> <strong>Fecha de alta</strong> {{product.dateAdded}}
+            <!-- <mat-icon>calendar_month</mat-icon> <strong>Fecha de alta</strong> {{(product.dateAdded.slice(0, -19))}} -->
         </p>
 
     </mat-card-content>
+
+    <mat-card-actions allign="end">
+        <button mat-raised-button type="button" title="Editar Producto" (click)="editProduct()">
+            <mat-icon>edit</mat-icon>
+        </button>
+        
+        <button mat-raised-button type="button" title="Volver al listado"(click)="closeProduct()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-card-actions>
 
 </mat-card>
 

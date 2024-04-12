@@ -1,0 +1,16 @@
+table {
+    margin: 20px 0px 0px 40px;
+    width: calc(100% - 80px);
+}
+
+// tr {
+//     background: rgb(173, 226, 255);
+// }
+
+#new-product {
+    margin: 20px 0px 0px 40px;
+}
+
+.mdc-data-table__row :hover{
+    background-color: chartreuse;
+}

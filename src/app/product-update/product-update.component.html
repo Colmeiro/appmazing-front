@@ -1,0 +1,44 @@
+<p>product-update works!</p>
+<mat-card class="card">
+    <mat-card-title>Editar producto</mat-card-title>
+    <mat-card-content class="card-content">
+        <form (submit)="updateProduct()">
+
+            <mat-form-field apperance="outline">
+                <mat-label>Producto: </mat-label>
+                <input matInput type="text" name="name" [(ngModel)]="product.name">
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Stock: </mat-label>
+                <input matInput type="text" name="stock" [(ngModel)]="product.stock">
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Precio: </mat-label>
+                <input matInput type="text" name="price" [(ngModel)]="product.price">
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Estado: </mat-label>
+                <input matInput type="text" name="active" [(ngModel)]="product.active">
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Fecha entrada: </mat-label>
+                <input matInput type="email" name="dateAdded" [(ngModel)]="product.dateAdded">
+            </mat-form-field>
+
+            <div class="buttons">
+                <button mat-raised-button type="button" type="submit">
+                    <mat-icon>save</mat-icon>
+                </button>
+                <button mat-raised-button type="button" (click)="cancelChanges()">
+                    <mat-icon>cancel</mat-icon>
+                </button>
+            </div>
+        
+        </form>
+
+    </mat-card-content>
+</mat-card>

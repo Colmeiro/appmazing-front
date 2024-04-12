@@ -1,35 +1,36 @@
-<!-- <p>contact-home works!</p> -->
+<a mat-stroked-button routerLink="/product/new" id="new-product">Nuevo producto</a>
 <table mat-table [dataSource]="products" class="mat-elevation-z8 card">
     <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>Id. </th>
-        <th mat-cell *matCellDef="let contact">{{ contact.id }}</th>
+        <th mat-cell *matCellDef="let product">{{ product.id }}</th>
     </ng-container>
 
     <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>Name </th>
-        <th mat-cell *matCellDef="let contact">{{ contact.name }}</th>
+        <th mat-cell *matCellDef="let product">{{ product.name }}</th>
     </ng-container>
 
     <ng-container matColumnDef="stock">
         <th mat-header-cell *matHeaderCellDef>Stock </th>
-        <th mat-cell *matCellDef="let contact">{{ contact.stock }}</th>
+        <th mat-cell *matCellDef="let product">{{ product.stock }}</th>
     </ng-container>
 
     <ng-container matColumnDef="price">
         <th mat-header-cell *matHeaderCellDef>Price </th>
-        <th mat-cell *matCellDef="let contact">{{ contact.price }}</th>
+        <th mat-cell *matCellDef="let product">{{ product.price }}</th>
     </ng-container>
     
     <ng-container matColumnDef="active">
-        <th mat-header-cell *matHeaderCellDef>Active </th>
-        <th mat-cell *matCellDef="let contact">{{ contact.active }}</th>
+        <th mat-header-cell *matHeaderCellDef>Estado </th>
+        <th mat-cell *matCellDef="let product">{{ product.active ? "Activo" : "Inactivo" }}</th>
     </ng-container>
 
     <ng-container matColumnDef="dateAdded">
         <th mat-header-cell *matHeaderCellDef>Date Added </th>
-        <th mat-cell *matCellDef="let contact">{{ contact.dateAdded}}</th>
+        <th mat-cell *matCellDef="let product">{{(product.dateAdded.slice(0, -19))}}</th>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="['name', 'price', 'stock', 'active', 'dateAdded']"></tr>
-    <tr mat-row *matRowDef="let row; columns['name', 'price', 'stock', 'active', 'dateAdded']"></tr>
+    <tr mat-row *matRowDef="let row; columns['name', 'price', 'stock', 'active', 'dateAdded']"
+    (click)="openDetailForm(row)"></tr>>
 </table>

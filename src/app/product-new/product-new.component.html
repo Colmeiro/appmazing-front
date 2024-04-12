@@ -1,0 +1,42 @@
+<p>product-new works!</p>
+<mat-card class="card">
+    <mat-card-title>Añadir producto</mat-card-title>
+    <mat-card-content class="card-content">
+        <form (submit)="newProduct()">
+        
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput type="text" name="name" [(ngModel)]="name">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Stock</mat-label>
+                    <input matInput type="text" name="stock" [(ngModel)]="stock">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Precio</mat-label>
+                    <input matInput type="text" name="price" [(ngModel)]="price">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Estado producto</mat-label>
+                    <input matInput type="text" name="active" [(ngModel)]="active">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Fecha entrada</mat-label>
+                    <input matInput type="text" name="dateAdded" [(ngModel)]="dateAdded">
+                </mat-form-field>
+
+                <div class="buttons">
+                    <button mat-raised-button type="submit">
+                        <mat-icon>save</mat-icon>
+                    </button>
+                    <button mat-raised-button type="button" (click)="cancelInsert()">
+                        <mat-icon>cancel</mat-icon>
+                    </button>
+                </div>
+        </form>
+    </mat-card-content>
+</mat-card>
