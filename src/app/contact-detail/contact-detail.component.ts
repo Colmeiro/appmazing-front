@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ContactsService } from '../contacts.service';
+import { ContactDeleteComponent } from '../contact-delete/contact-delete.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-contact-detail',
@@ -13,7 +15,9 @@ export class ContactDetailComponent implements OnInit {
 
   constructor(private contactsService: ContactsService, 
               private route: ActivatedRoute,
-              private router: Router) {}
+              private router: Router,
+              public dialog: MatDialog
+            ) {}
 
   ngOnInit() {
       this.contact = this.contactsService.getContact(this.route.snapshot.params['id']).subscribe(data=> {
@@ -29,4 +33,8 @@ export class ContactDetailComponent implements OnInit {
   closeContact() {
     this.router.navigate(['/contacts']);
    }
+
+  openDeleteDialog(contactId: number): void{
+    const dialogRef = this.dialog.open(ContactDeleteComponent, { data: { contactId: contactId } });
+  }
 }

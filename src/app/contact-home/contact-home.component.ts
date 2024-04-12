@@ -23,7 +23,11 @@ export class ContactHomeComponent implements OnInit{
   }
 
   openDetailForm(row: any) {
-    this.router.navigate(['/contact', row.id])
+    this.router.navigate(['/contact', row.id]);
+  }
+
+  editContactDetail(contact: any) {
+    this.router.navigate(['/contact/edit', contact]);
   }
 
   openDeleteDialog(contactId: number): void{

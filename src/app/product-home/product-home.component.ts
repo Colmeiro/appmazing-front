@@ -26,6 +26,10 @@ export class ProductHomeComponent implements OnInit{
     this.router.navigate(['/product', row.id])
   }
 
+  editProductDetail(product: any) {
+    this.router.navigate(['/product/edit', product]);
+  }
+
   openDeleteDialog(productId: number): void{
     const dialogRef = this.dialog.open(ProductDeleteComponent, { data: { productId: productId } });
   }
