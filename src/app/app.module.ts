@@ -23,6 +23,8 @@ import { ContactNewComponent } from './contact-new/contact-new.component';
 import { ProductNewComponent } from './product-new/product-new.component';
 import { ContactDeleteComponent } from './contact-delete/contact-delete.component';
 import { ProductDeleteComponent } from './product-delete/product-delete.component';
+import { ChartsComponent } from './charts/charts.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { ProductDeleteComponent } from './product-delete/product-delete.componen
     ContactNewComponent,
     ProductNewComponent,
     ContactDeleteComponent,
-    ProductDeleteComponent
+    ProductDeleteComponent,
+    ChartsComponent
   ],
   entryComponents: [
     ContactDeleteComponent, 
@@ -54,7 +57,8 @@ import { ProductDeleteComponent } from './product-delete/product-delete.componen
     MatIconModule,
     FormsModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

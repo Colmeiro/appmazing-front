@@ -19,6 +19,7 @@ export class ContactHomeComponent implements OnInit{
   ngOnInit() {
     this.contactsService.getContacts().subscribe(data => {
       this.contacts = data;
+      console.log("HEy")
     });
   }
 
