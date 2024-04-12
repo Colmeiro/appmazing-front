@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactsService } from '../contacts.service';
 import { Router } from '@angular/router';
+import { ContactDeleteComponent } from '../contact-delete/contact-delete.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-contact-home',
@@ -10,7 +12,8 @@ import { Router } from '@angular/router';
 export class ContactHomeComponent implements OnInit{
   contacts: any = [];
   constructor(private contactsService: ContactsService,
-              private router: Router
+              private router: Router,
+              public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -21,5 +24,9 @@ export class ContactHomeComponent implements OnInit{
 
   openDetailForm(row: any) {
     this.router.navigate(['/contact', row.id])
+  }
+
+  openDeleteDialog(contactId: number): void{
+    const dialogRef = this.dialog.open(ContactDeleteComponent, { data: { contactId: contactId } });
   }
 }

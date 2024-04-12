@@ -8,6 +8,7 @@ import { ContactHomeComponent } from './contact-home/contact-home.component';
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from  '@angular/material/toolbar';
+import {MatDialogModule} from '@angular/material/dialog';
 import { MatButtonModule } from  '@angular/material/button';
 import { MatCardModule } from  '@angular/material/card';
 import { MatIconModule } from  '@angular/material/icon';
@@ -20,6 +21,8 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
 import { FormsModule } from '@angular/forms';
 import { ContactNewComponent } from './contact-new/contact-new.component';
 import { ProductNewComponent } from './product-new/product-new.component';
+import { ContactDeleteComponent } from './contact-delete/contact-delete.component';
+import { ProductDeleteComponent } from './product-delete/product-delete.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,13 @@ import { ProductNewComponent } from './product-new/product-new.component';
     ContactUpdateComponent,
     ProductUpdateComponent,
     ContactNewComponent,
-    ProductNewComponent
+    ProductNewComponent,
+    ContactDeleteComponent,
+    ProductDeleteComponent
+  ],
+  entryComponents: [
+    ContactDeleteComponent, 
+    ProductDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +53,8 @@ import { ProductNewComponent } from './product-new/product-new.component';
     MatCardModule,
     MatIconModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

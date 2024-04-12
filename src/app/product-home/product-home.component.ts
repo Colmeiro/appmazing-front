@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../products.service';
 import { Router } from '@angular/router';
+import { ProductDeleteComponent } from '../product-delete/product-delete.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-product-home',
@@ -10,7 +12,8 @@ import { Router } from '@angular/router';
 export class ProductHomeComponent implements OnInit{
   products: any = [];
   constructor(private productsService: ProductsService,
-              private router: Router
+              private router: Router,
+              public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -21,6 +24,10 @@ export class ProductHomeComponent implements OnInit{
 
   openDetailForm(row: any) {
     this.router.navigate(['/product', row.id])
+  }
+
+  openDeleteDialog(productId: number): void{
+    const dialogRef = this.dialog.open(ProductDeleteComponent, { data: { productId: productId } });
   }
 
 }

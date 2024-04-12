@@ -1,4 +1,4 @@
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient,HttpHeaders, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -39,6 +39,16 @@ export class ContactsService {
     const body = contact;
     const headers = new HttpHeaders();
     this.http.post(url, body, {headers}).subscribe();
+  }
+
+  deleteContact(id: number): void {
+    const url = "http://localhost:30030/contactos/delete";
+    const body = {id : id};
+    const options = {
+      body: body,
+      headers: new HttpHeaders()
+    };
+    this.http.delete(url, options).subscribe();
   }
 }
 
